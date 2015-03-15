@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minWidth="350dp"
+    android:background="@drawable/appvirality_launchpopup_background"
+    android:orientation="vertical"
+    android:gravity="center_horizontal" >
+
+   <ImageView
+        android:id="@+id/appvirality_launchimage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="23dp"
+        android:gravity="center"
+        android:src="@drawable/appvirality_megaphone" />
+
+    <TextView
+        android:id="@+id/appvirality_txtlaunchmessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="@string/appvirality_txtlaunchtext"
+        android:textColor="#ffffff"
+        android:typeface="sans"
+        android:gravity="center"
+        android:layout_margin="10dp" />
+
+    <Button
+        android:id="@+id/appvirality_btnlaunchbar"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="#ffffff"
+        android:text="@string/appvirality_btnclaimoffer"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:typeface="sans"
+        android:textSize="15sp" />
+
+    <View
+        android:id="@+id/appvirality_divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#d4d4d4" />
+
+    <Button
+        android:id="@+id/appvirality_btnremindlater"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="#ffffff"
+        android:text="@string/appvirality_remindlater"
+        android:textColor="#000000"
+        android:typeface="sans"
+        android:textSize="13sp" />
+</LinearLayout>

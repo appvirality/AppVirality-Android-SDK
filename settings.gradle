@@ -1,0 +1,2 @@
+include ':AppviralityUI-TestApp'
+include ':AppviralityUI'

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/appvirality_wom_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF4D4D"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="#80000000"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/appvirality_growth_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text="@string/appvirality_growth_title"
+                android:textColor="#ffffff" />
+
+            <TextView
+                android:id="@+id/appvirality_earnings"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:text=""
+                android:textColor="#ffffff" />
+
+            <ImageView
+                android:id="@+id/appvirality_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:paddingRight="3dp"
+                android:src="@drawable/appvirality_settings" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/appvirality_campaignimage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:maxHeight="190dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/appvirality_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="@string/appvirality_growth_title_text"
+                android:textColor="#ffffff"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/appvirality_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:gravity="center_horizontal"
+                android:text="@string/appvirality_growth_desc"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/appvirality_referral_link_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="1dp"
+            android:text="@string/appvirality_growth_link_title"
+            android:textColor="#ffffff" />
+
+        <LinearLayout
+            android:id="@+id/appvirality_custom_share_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/appvirality_share_link"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/appvirality_growth_link"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/appvirality_copy"
+                android:paddingRight="5dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/appvirality_no_social_installed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <com.appvirality.wom.ExpandableHeightGridView
+            android:id="@+id/appvirality_gridView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:gravity="center"
+            android:horizontalSpacing="5.0dip"
+            android:isScrollContainer="false"
+            android:numColumns="3"
+            android:paddingBottom="10dp"
+            android:verticalSpacing="5.0dip" />
+
+        <TextView
+            android:id="@+id/appvirality_show_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/appvirality_growth_seemore"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <!-- Warning : Do not remove this line - Removing this would cause license implications. 
+        This will be removed automatically if you go for whiteLabel solution. -->
+
+        <com.appvirality.wom.WhilteLabel
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:layout_marginBottom="15dp" />
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c9c9c9"
+    android:fillViewport="true"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp" >
+
+        <TableLayout
+            android:id="@+id/appvirality_user_earnings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/appvirality_user_settings" >
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/appvirality_user_settings_text_bg" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/appvirality_user_settings_earnings"
+                    android:textColor="#ffffff" />
+            </TableRow>
+
+            <LinearLayout
+                android:id="@+id/appvirality_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="#ffffff"
+                android:gravity="center" >
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TableRow
+                android:id="@+id/appvirality_total_earinings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="#ffffff"
+                android:paddingLeft="15dp"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/appvirality_user_settings_total_earnings"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/appvirality_user_settings_septr" />
+
+                <TextView
+                    android:id="@+id/appvirality_earnings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/appvirality_user_settings_zero"
+                    android:textColor="#000000" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#bababa" />
+
+            <TableRow
+                android:id="@+id/appvirality_claimed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="#ffffff"
+                android:paddingLeft="15dp"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/appvirality_user_settings_claimed"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/appvirality_user_settings_septr" />
+
+                <TextView
+                    android:id="@+id/appvirality_txtclaimed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/appvirality_user_settings_zero"
+                    android:textColor="#000000" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#bababa" />
+
+            <TableRow
+                android:id="@+id/appvirality_hold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="#ffffff"
+                android:paddingLeft="15dp"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/appvirality_user_settings_onhold"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/appvirality_user_settings_septr" />
+
+                <TextView
+                    android:id="@+id/appvirality_earnings_on_hold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/appvirality_user_settings_zero"
+                    android:textColor="#000000" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#bababa" />
+
+            <TableRow
+                android:id="@+id/appvirality_row_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:background="#ffffff"
+                android:paddingLeft="15dp"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/appvirality_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:layout_span="2"
+                    android:layout_weight="1"
+                    android:textColor="#000000" />
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/appvirality_user_settings"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/appvirality_custom_link_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/appvirality_details"
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/appvirality_user_settings_personalurl"
+                    android:textColor="#ffffff" />
+
+                <ImageView
+                    android:id="@+id/appvirality_dropdown1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/appvirality_custom_link_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <EditText
+                    android:id="@+id/appvirality_custom_param"
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/appvirality_edittextbg"
+                    android:cursorVisible="true"
+                    android:digits="0123456789qwertzuiopasdfghjklyxcvbnm"
+                    android:hint="@string/appvirality_user_settings_name"
+                    android:maxLength="10"
+                    android:paddingLeft="8dp"
+                    android:textColor="#000000" />
+
+                <Button
+                    android:id="@+id/appvirality_savelink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/appvirality_user_settings_btnsave"
+                    android:padding="6dp"
+                    android:text="@string/appvirality_user_settings_btnsave"
+                    android:textColor="#ffffff" />
+
+                <ProgressBar
+                    android:id="@+id/appvirality_progressbar"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="5dp"
+                    android:visibility="invisible"
+                    android:layout_gravity="center_vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/appvirality_custom_link_btn_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@drawable/appvirality_textarea"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/appvirality_custom_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/appvirality_user_settings_share"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/appvirality_settings_friends"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                android:text="@string/appvirality_user_settings_referrer"
+                android:textColor="#ffffff" />
+
+            <ImageView
+                android:id="@+id/appvirality_dropdown2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center" />
+        </LinearLayout>
+
+        <TableLayout
+            android:id="@+id/appvirality_tblrewarded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:shrinkColumns="1"
+            android:stretchColumns="1" >
+        </TableLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/appvirality_user_settings"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/appvirality_layout_terms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/appvirality_user_settings_terms"
+                    android:textColor="#ffffff" />
+
+                <ImageView
+                    android:id="@+id/appvirality_drop_terms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center" />
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/appvirality_progressbar_terms"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:visibility="gone" />
+
+            <WebView
+                android:id="@+id/appvirality_wom_terms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/appvirality_no_network"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/appvirality_no_network_message"
+                android:textColor="#000000"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/appvirality_settings_reload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/appvirality_user_settings_btnsave"
+                android:padding="8dp"
+                android:text="@string/appvirality_btnreload"
+                android:textColor="#ffffff"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

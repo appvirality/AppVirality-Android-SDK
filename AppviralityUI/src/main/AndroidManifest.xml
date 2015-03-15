@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.appvirality" >
+
+    <application>
+        <activity
+            android:name="com.appvirality.wom.WelcomeScreenActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:configChanges="keyboardHidden|orientation"
+            android:name="com.appvirality.wom.ShowGrowthHack"
+            android:theme="@style/appvirality_activity_style" />
+
+        <activity
+            android:configChanges="keyboardHidden|orientation"
+            android:name="com.appvirality.wom.Settings"
+            android:theme="@style/appvirality_activity_style" />
+    </application>
+
+</manifest>

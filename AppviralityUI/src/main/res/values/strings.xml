@@ -1,0 +1,41 @@
+<resources>
+    <string name="appvirality_launch_btnclaimoffer">Claim It</string>
+    <string name="appvirality_launch_btnremidlater">Remid Later</string>
+    <string name="appvirality_txtlaunchtext">Get Flat 30% off on your next ticket booking or get Rs.100 cashback. </string>
+    <string name="appvirality_txtoffertitle">Offer Title goes Here!</string>
+    <string name="appvirality_txtofferdescription">Offer Description goes Here. Ex: Tweet or Share Get 5% discount on next purchase product.</string>
+    <string name="appvirality_btnfacebooksharetext">Share</string>
+    <string name="appvirality_btntwittertext">Tweet</string>
+    <string name="appvirality_btnwhatsapptext">WhatsApp</string>
+    <string name="appvirality_txtclaimthisoffer">To claim this offer</string>
+    <string name="appvirality_btnremindlatertext">Remind Later</string>
+    <string name="appvirality_remindlater">REMIND LATER</string>
+    <string name="appvirality_btnclaimoffer">CLAIM IT</string>
+    <string name="appvirality_growth_title">Referrals</string>
+    <string name="appvirality_growth_title_text">Referrals</string>
+    <string name="appvirality_growth_desc">Your friend had referred you. please login to claim it.</string>
+    <string name="appvirality_growth_link_title">Your personal referral Link:</string>
+    <string name="appvirality_growth_link">www.r.appvirality.com/df/5</string>
+    <string name="appvirality_growth_seemore">Show More</string>
+    <string name="appvirality_welcome_title">You\'ve been invited!</string>
+    <string name="appvirality_welcome_desc">{{username}} has given you Reward $ 15</string>
+    <string name="appvirality_welcome_text_email">Enter your email id</string>
+    <string name="appvirality_welcome_btnclaim">Claim It</string>
+    <string name="appvirality_welcome_btnsignup">Sign Up</string>
+    <string name="appvirality_welcome_btnskip">Skip</string>
+    <string name="appvirality_user_settings_earnings">Earnings</string>
+    <string name="appvirality_user_settings_total_earnings">Total Earnings</string>
+    <string name="appvirality_user_settings_septr">:</string>
+    <string name="appvirality_user_settings_zero">0</string>
+    <string name="appvirality_user_settings_claimed">Claimed</string>
+    <string name="appvirality_user_settings_onhold">On Hold</string>
+    <string name="appvirality_user_settings_terms">Terms and Conditions</string>
+    <string name="appvirality_user_settings_personalurl">Your personal share url</string>
+    <string name="appvirality_user_settings_name">set name</string>
+    <string name="appvirality_user_settings_btnsave">Save</string>
+    <string name="appvirality_user_settings_share">shareUrl/</string>
+    <string name="appvirality_user_settings_referrer">Your Friends</string>
+    <string name="appvirality_no_network_message">Sorry.! Network unavailable, please check your internet connection and try again</string>
+    <string name="appvirality_btnreload">Reload</string>
+
+</resources>

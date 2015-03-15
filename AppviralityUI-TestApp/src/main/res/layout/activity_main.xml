@@ -1,0 +1,82 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:background="@color/red" >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Growth Hack Launch Options"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:typeface="serif" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/appvirality_textarea"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option - 1 : Custom Button (i.e Like Invite Friends button in your App menu)"
+            android:typeface="serif"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/growthhack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Invite Friends"
+            android:typeface="serif" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Option - 2 : Launch Bar (i.e Growth Hack will be launched from a Mini notification)"
+            android:typeface="serif"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/launchbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Show Launch Bar"
+            android:typeface="serif" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Option - 3 : Launch Popup (i.e Growth Hack will be launched from a Popup notification)"
+            android:typeface="serif"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/launchpopup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Show Popup Notification"
+            android:typeface="serif" />
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>

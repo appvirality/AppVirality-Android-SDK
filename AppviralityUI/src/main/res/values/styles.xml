@@ -1,0 +1,11 @@
+<resources>
+    <style name="appvirality_slide_activity">
+        <item name="android:windowEnterAnimation">@anim/appvirality_popup_show</item>
+        <item name="android:windowExitAnimation">@anim/appvirality_popup_hide</item>
+    </style>
+    <style name="appvirality_activity_style">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/appvirality_slide_activity</item>
+    </style>
+   
+</resources>
