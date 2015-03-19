@@ -35,7 +35,7 @@ public class ShowGrowthHack extends Activity
 	private ExpandableHeightGridView gridView;
 	private GridViewAdapter customGridAdapter;
 	private String customLinkSaved;
-	ArrayList<com.appvirality.wom.Items> socialActions;
+	ArrayList<Items> socialActions;
 	private TextView txtShareLink;
 	private String shareLink;
 
@@ -54,6 +54,7 @@ public class ShowGrowthHack extends Activity
 				final TextView txtReferrals = (TextView) findViewById(R.id.appvirality_growth_title);				
 				final TextView txtShowMore = (TextView) findViewById(R.id.appvirality_show_more);
 				final TextView txtNoSocialInstalled = (TextView) findViewById(R.id.appvirality_no_social_installed);
+				final TextView txtTerms = (TextView) findViewById(R.id.appvirality_txtuserterms);
 				final LinearLayout campaignImage = (LinearLayout) findViewById(R.id.appvirality_campaignimage);
 				final LinearLayout referralShareUrl = (LinearLayout) findViewById(R.id.appvirality_custom_share_link);
 				txtShareLink = (TextView) findViewById(R.id.appvirality_share_link);
@@ -64,6 +65,7 @@ public class ShowGrowthHack extends Activity
 				gridView = (ExpandableHeightGridView) findViewById(R.id.appvirality_gridView);
 				if(campaignDetails.NoSocialActionsFound) {
 					txtNoSocialInstalled.setText(campaignDetails.NoSocialActionsMessage);
+					txtNoSocialInstalled.setVisibility(View.VISIBLE);
 				}
 				else {
 					setSocialActions(campaignDetails, false, campaignDetails.isCustomTemplete, ShowGrowthHack.this);
@@ -145,6 +147,17 @@ public class ShowGrowthHack extends Activity
 					}
 				});
 
+				txtTerms.setOnClickListener(new OnClickListener() {					
+					@Override
+					public void onClick(View v) {
+						Intent intent = new Intent(getApplicationContext(), Terms.class);
+						intent.putExtra("campaignid", campaignDetails.CampaignId);
+						if(!campaignDetails.isCustomTemplete)
+							intent.putExtra("bgcolor", campaignDetails.CampaignBGColor);
+						startActivity(intent);
+					}
+				});
+
 				if(!campaignDetails.isCustomTemplete) {
 					txtOfferTitle.setTextColor(Color.parseColor(campaignDetails.OfferTitleColor));
 					int offerDescriptionColor = Color.parseColor(campaignDetails.OfferDescriptionColor);
@@ -192,7 +205,7 @@ public class ShowGrowthHack extends Activity
 							}
 						}
 					}
-				});				
+				});	
 			}
 			else {
 				finish();
@@ -218,7 +231,6 @@ public class ShowGrowthHack extends Activity
 			}
 		}
 	}
-
 
 	private void setSocialActions(CampaignDetails campaignDetails, boolean showAll, boolean isCustomTemplete, Activity activity)
 	{
