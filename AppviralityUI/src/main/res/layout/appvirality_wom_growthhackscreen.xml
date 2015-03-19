@@ -95,6 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
             android:orientation="horizontal"
             android:padding="5dp" >
 
@@ -117,6 +118,17 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/appvirality_txtuserterms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="11sp"
+            android:text="@string/appvirality_user_settings_terms"
+
+             />
+        
+        <TextView
             android:id="@+id/appvirality_no_social_installed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -124,7 +136,8 @@
             android:layout_margin="10dp"
             android:textColor="#ffffff"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="gone" />
 
         <com.appvirality.wom.ExpandableHeightGridView
             android:id="@+id/appvirality_gridView"
@@ -134,6 +147,7 @@
             android:gravity="center"
             android:horizontalSpacing="5.0dip"
             android:isScrollContainer="false"
+            android:layout_marginTop="10dp"
             android:numColumns="3"
             android:paddingBottom="10dp"
             android:verticalSpacing="5.0dip" />

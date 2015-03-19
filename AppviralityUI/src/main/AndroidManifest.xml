@@ -15,6 +15,11 @@
             android:configChanges="keyboardHidden|orientation"
             android:name="com.appvirality.wom.Settings"
             android:theme="@style/appvirality_activity_style" />
+
+        <activity
+            android:name="com.appvirality.wom.Terms"
+            android:theme="@style/appvirality_activity_style" />
+
     </application>
 
 </manifest>
