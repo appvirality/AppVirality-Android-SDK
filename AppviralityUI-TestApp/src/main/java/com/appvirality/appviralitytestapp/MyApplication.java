@@ -1,6 +1,5 @@
 package com.appvirality.appviralitytestapp;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import android.app.Application;
@@ -8,7 +7,6 @@ import android.util.Log;
 
 import com.appvirality.android.AppviralityAPI;
 import com.appvirality.android.ConversionEventListner;
-import com.appvirality.android.RedeemListner;
 
 public class MyApplication extends Application {
 
@@ -25,12 +23,17 @@ public class MyApplication extends Application {
 			@Override
 			public void onFriendReward(JSONObject friendRewardListner) {
 				try {
-					JSONObject acceptedList = new JSONObject();
+					//Use the following code block 
+					//to mark the friend reward as Distributed if the reward type is in-store credits
+					//to approve the dynamic coupon if the reward type is Dynamic Coupon.
+					//Example: You will call this method after rewarding the user with In-store credits(wallet balance).
+					/*JSONObject acceptedList = new JSONObject();
 					acceptedList.put("rewardid", friendRewardListner.getString("rewardid"));
-					acceptedList.put("reward_type", friendRewardListner.getString("reward_type"));					
+					acceptedList.put("reward_type", friendRewardListner.getString("reward_type"));	
+					acceptedList.put("status", "Distribute");				
 					// add this call after accepting the reward to confirm.
-					AppviralityAPI.acceptReward(new JSONObject().put("rewards", new JSONArray().put(acceptedList)));
-					Log.d("AppviralityAPI", "user checkFriendReward result : " + friendRewardListner);
+					AppviralityAPI.acceptReward(new JSONObject().put("rewards", new JSONArray().put(acceptedList)));*/
+					Log.d("AppviralityAPI", "Friend Reward Details : " + friendRewardListner);
 				}
 				catch(Exception e) {
 					e.printStackTrace();

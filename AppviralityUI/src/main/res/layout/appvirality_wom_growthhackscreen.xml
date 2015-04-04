@@ -125,7 +125,7 @@
             android:textColor="#ffffff"
             android:textSize="11sp"
             android:text="@string/appvirality_user_settings_terms"
-			android:visibility="gone"
+            android:visibility="gone"
              />
         
         <TextView

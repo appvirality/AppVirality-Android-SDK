@@ -40,8 +40,8 @@ public class WelcomeScreenActivity extends Activity {
 				imgProfile.setImageBitmap(referrerDetails.ProfileImage);
 			}
 			if(!referrerDetails.FriendRewardEvent.equalsIgnoreCase("Install")) {				
-				btnClaim.setVisibility(View.INVISIBLE);
-				userEmail.setVisibility(View.INVISIBLE);
+				btnClaim.setVisibility(View.GONE);
+				userEmail.setVisibility(View.GONE);
 				txtSkipReferrer.setText("Close");				
 			}
 			if(referrerDetails.FriendRewardEvent.equalsIgnoreCase("Signup"))
@@ -78,29 +78,24 @@ public class WelcomeScreenActivity extends Activity {
 			btnSignUp.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {					
-					// add code to redirecting user to register activity
-					//AppviralityAPI.saveConversionEvent("Signup", null, null);
-					
-					AppviralityAPI.claimRewardOnSignUp(getApplicationContext(), new AppviralityAPI.RewardClaimed() {    
-					     @Override
-					     public void OnResponse(boolean isRewarded, String message) {
-					      try {
-					    	  if(isRewarded)
-					    	  {
-					    		  Toast.makeText(getApplicationContext(), message , Toast.LENGTH_LONG).show();
-					    	  }
-					    	  else
-					    	  {
-					    		  Toast.makeText(getApplicationContext(), "Sorry..! Reward is only first time app users, But you can still earn by referring your friends" , Toast.LENGTH_LONG).show();
-					    	  }
-					       
-					      }
-					      catch(Exception e) {
-					       
-					      }
-					     }
-					    });
-					
+
+					setResult(RESULT_OK);
+
+					//Please add the following code block in your Registration page after successful registration.
+					/*AppviralityAPI.claimRewardOnSignUp(getApplicationContext(), new AppviralityAPI.RewardClaimed() {    
+						@Override
+						public void OnResponse(boolean isRewarded, String message) {
+							if(isRewarded)
+							{
+								Toast.makeText(getApplicationContext(), message , Toast.LENGTH_LONG).show();
+							}
+							else
+							{
+								Toast.makeText(getApplicationContext(), "Sorry..! Reward is only first time app users, But you can still earn by referring your friends" , Toast.LENGTH_LONG).show();
+							}
+						}
+					});*/
+
 					finish();
 				}
 			});
@@ -124,19 +119,19 @@ public class WelcomeScreenActivity extends Activity {
 					try {
 						if(progressDialog != null && progressDialog.isShowing())
 							progressDialog.dismiss();
-						 if(isRewarded)
-				    	  {
-				    		  Toast.makeText(getApplicationContext(), message , Toast.LENGTH_LONG).show();
-				    	  }
-				    	  else
-				    	  {
-				    		  Toast.makeText(getApplicationContext(), "Sorry..! Reward is only first time app users, But you can still earn by referring your friends" , Toast.LENGTH_LONG).show();
-				    	  }
-						
+						if(isRewarded)
+						{
+							Toast.makeText(getApplicationContext(), message , Toast.LENGTH_LONG).show();
+						}
+						else
+						{
+							Toast.makeText(getApplicationContext(), "Sorry..! Reward is only first time app users, But you can still earn by referring your friends" , Toast.LENGTH_LONG).show();
+						}
+
 						finish();
 					}
 					catch(Exception e) {
-						
+
 					}
 				}
 			});

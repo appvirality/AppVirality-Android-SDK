@@ -1,4 +1,5 @@
 <resources>
+	<string name="Appvirality_Version">V1.1.7</string>
     <string name="appvirality_launch_btnclaimoffer">Claim It</string>
     <string name="appvirality_launch_btnremidlater">Remid Later</string>
     <string name="appvirality_txtlaunchtext">Get Flat 30% off on your next ticket booking or get Rs.100 cashback. </string>

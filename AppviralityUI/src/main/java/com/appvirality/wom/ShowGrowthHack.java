@@ -35,7 +35,7 @@ public class ShowGrowthHack extends Activity
 	private ExpandableHeightGridView gridView;
 	private GridViewAdapter customGridAdapter;
 	private String customLinkSaved;
-	ArrayList<Items> socialActions;
+	ArrayList<com.appvirality.wom.Items> socialActions;
 	private TextView txtShareLink;
 	private String shareLink;
 
@@ -74,7 +74,7 @@ public class ShowGrowthHack extends Activity
 					else
 						txtShowMore.setVisibility(View.VISIBLE);
 				}		
-				referralShareUrl.setOnClickListener(new OnClickListener() {
+				referralShareUrl.setOnClickListener(new View.OnClickListener() {
 					@SuppressLint("NewApi")
 					@Override
 					public void onClick(View view) {
@@ -122,7 +122,7 @@ public class ShowGrowthHack extends Activity
 					}
 				});
 
-				findViewById(R.id.appvirality_settings).setOnClickListener(new OnClickListener() {
+				findViewById(R.id.appvirality_settings).setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
 						try
