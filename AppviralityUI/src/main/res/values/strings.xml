@@ -24,6 +24,7 @@
     <string name="appvirality_welcome_btnclaim">Claim It</string>
     <string name="appvirality_welcome_btnsignup">Sign Up</string>
     <string name="appvirality_welcome_btnskip">Skip</string>
+    <string name="appvirality_welcome_btncontacts">Invite Friends</string>
     <string name="appvirality_user_settings_earnings">Earnings</string>
     <string name="appvirality_user_settings_total_earnings">Total Earnings</string>
     <string name="appvirality_user_settings_septr">:</string>
@@ -38,5 +39,7 @@
     <string name="appvirality_user_settings_referrer">Your Friends</string>
     <string name="appvirality_no_network_message">Sorry.! Network unavailable, please check your internet connection and try again</string>
     <string name="appvirality_btnreload">Reload</string>
+    <string name="appvirality_user_settings_coupon">My Coupons</string>
+     <string name="appvirality_user_settings_nocoupons">Oops, You don’t have any coupons yet!</string>
 
 </resources>

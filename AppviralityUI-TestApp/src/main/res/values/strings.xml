@@ -5,4 +5,5 @@
     <string name="action_settings">Settings</string>
     <string name="welcome_message">Welcome to AppVirality Test</string>
     <string name="launchActivity_Message">Here you will see the result (Mini Notification or Popup), if you have configured the Campaign in Appvirality Dashboard.</string>
+    <string name="facebook_app_id">785099516187197</string>
 </resources>

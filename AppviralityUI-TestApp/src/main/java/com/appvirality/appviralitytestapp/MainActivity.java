@@ -3,10 +3,12 @@ package com.appvirality.appviralitytestapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.appvirality.AppviralityUI;
+import com.appvirality.android.AppviralityAPI;
 
 public class MainActivity extends Activity {
 
@@ -17,14 +19,24 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
 		//Show personalized welcome screen for new users
 		AppviralityUI.showWelcomeScreen(MainActivity.this, REQUEST_CODE);
-
-		//Option:1 - Launch from custom button i.e from "Invite Friends" or "Refer & Earn" button on your App menu
-		findViewById(R.id.growthhack).setOnClickListener(new OnClickListener() { 
+		// Get GCM Registration key to enable push notifications.
+		//GCMRegistration.registerGCM(getApplicationContext());
+        AppviralityAPI.getInstance(getApplicationContext(), new AppviralityAPI.UserInstance() {
 			@Override
-			public void onClick(View v) { 
+			public void onInstance(AppviralityAPI instance) {
+				String userkey = instance.getUserKey();
+				boolean isReferrer = instance.hasReferrer();
+				Log.i("Userkey: ", userkey + " & HasReferrer: " + isReferrer);
+			}
+		});
+		//Get emailid used to distribute the rewards
+		Log.i("User EmailID: ", AppviralityAPI.getEmailIdFromAccounts(getApplicationContext()));
+		//Option:1 - Launch from custom button i.e from "Invite Friends" or "Refer & Earn" button on your App menu
+		findViewById(R.id.growthhack).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
 				AppviralityUI.showGrowthHack(MainActivity.this, AppviralityUI.GH.Word_of_Mouth);
 			}
 		});

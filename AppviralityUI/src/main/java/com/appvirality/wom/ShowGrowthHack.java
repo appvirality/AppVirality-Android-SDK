@@ -106,6 +106,16 @@ public class ShowGrowthHack extends Activity
 				gridView.setOnItemClickListener(new OnItemClickListener() {
 					@Override
 					public void onItemClick(AdapterView<?> parent, View v, int index, long id) {
+						if(socialActions.get(index).appname.equals("Invite Contacts")) {
+							try {
+								Intent inviteContacts = new Intent(getApplicationContext(), InviteContacts.class);
+								startActivity(inviteContacts);
+							}
+							catch(ActivityNotFoundException e) {
+								Log.e("AppviralitySDK", "please add InviteContacts activity in your manifest");
+							}
+							return;
+						}
 						AppviralityAPI.startActvity(socialActions.get(index).packagename, new ComponentName(socialActions.get(index).packagename, socialActions.get(index).classname), ShowGrowthHack.this);
 					}
 				});

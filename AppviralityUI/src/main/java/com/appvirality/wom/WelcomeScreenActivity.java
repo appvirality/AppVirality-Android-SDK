@@ -6,6 +6,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -25,6 +26,7 @@ public class WelcomeScreenActivity extends Activity {
 		super.onCreate(savedInstanceState);      
 		setContentView(R.layout.appvirality_welcomescreen);
 		try {
+			Log.i("AppViralitySDK", "Welcome screen Started");
 			final ReferrerDetails referrerDetails = CampaignHandler.getReferrerDetails();
 			TextView txtReferrerDesc = (TextView) findViewById(R.id.appvirality_reward_details);			
 			final EditText userEmail = (EditText) findViewById(R.id.appvirality_edittext_email);
@@ -99,6 +101,7 @@ public class WelcomeScreenActivity extends Activity {
 					finish();
 				}
 			});
+			
 		}
 		catch(Exception e) {
 			finish();
