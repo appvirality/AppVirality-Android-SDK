@@ -19,12 +19,8 @@
         <activity
             android:name="com.appvirality.wom.Terms"
             android:theme="@style/appvirality_activity_style" />
-        
-        <activity
-            android:name="com.appvirality.wom.InviteContacts"
-            android:theme="@style/appvirality_activity_style" />
-        
-               
+
+
     </application>
 
 </manifest>
