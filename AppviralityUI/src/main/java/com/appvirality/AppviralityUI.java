@@ -43,4 +43,9 @@ public class AppviralityUI extends AVEnums
 	{
 		CampaignHandler.showWelcomeScreen(activity, requestCode);
 	}
+	
+	public static void onStop()
+	{
+	    com.appvirality.CampaignHandler.onStop();
+	}
 }

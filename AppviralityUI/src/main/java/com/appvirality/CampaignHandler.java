@@ -70,6 +70,15 @@ public class CampaignHandler {
 			Log.d("AppviralitySDK", "you don't have any active campaigns at this time.");
 		}
 	}
+	
+	public static void onStop()
+	{
+		if(progressDialog != null && progressDialog.isShowing())
+		{
+			progressDialog.dismiss();
+			progressDialog = null;
+		}			
+	}
 
 	public static void showGrowthHack(final Activity activity, CampaignDetails campaignDetails)
 	{
@@ -111,7 +120,10 @@ public class CampaignHandler {
 				@Override
 				public void onCampaignReady(CampaignDetails campaignDetails) {	
 					if(progressDialog != null && progressDialog.isShowing())
+					{
 						progressDialog.dismiss();
+						progressDialog = null;
+					}
 					if(campaignDetails != null) {
 						CampaignHandler.showGrowthHack(activity, growthType, campaignDetails);
 					} else {

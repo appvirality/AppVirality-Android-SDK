@@ -4,19 +4,23 @@
 
     <application>
         <activity
+            android:screenOrientation="portrait"
             android:name="com.appvirality.wom.WelcomeScreenActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity
+            android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation"
             android:name="com.appvirality.wom.ShowGrowthHack"
             android:theme="@style/appvirality_activity_style" />
-
+        
         <activity
+            android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation"
             android:name="com.appvirality.wom.Settings"
             android:theme="@style/appvirality_activity_style" />
-
+        
         <activity
+            android:screenOrientation="portrait"
             android:name="com.appvirality.wom.Terms"
             android:theme="@style/appvirality_activity_style" />
 
