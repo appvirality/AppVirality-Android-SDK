@@ -31,6 +31,9 @@ public class MainActivity extends Activity {
 				Log.i("Userkey: ", userkey + " & HasReferrer: " + isReferrer);
 			}
 		});
+
+
+
 		//Get emailid used to distribute the rewards
 		Log.i("User EmailID: ", AppviralityAPI.getEmailIdFromAccounts(getApplicationContext()));
 		//Option:1 - Launch from custom button i.e from "Invite Friends" or "Refer & Earn" button on your App menu
@@ -38,8 +41,21 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				AppviralityUI.showGrowthHack(MainActivity.this, AppviralityUI.GH.Word_of_Mouth);
+				//Use LogOut if your App has Login & Logout functionality
+				//AppviralityAPI.LogOut(getApplicationContext());
 			}
 		});
+
+		//Option:1_2 - show custom button if campaign Exists i.e from "Invite Friends" or "Refer & Earn" button on your App menu if campaign exists
+		findViewById(R.id.btnGH_IfCampaignExists).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(MainActivity.this, InviteButtonOnCampaignAvailability.class);
+				intent.putExtra(LAUNCHCODE, true);
+				startActivity(intent);
+			}
+		});
+
 
 		//Option - 2 : Launch Bar (i.e Growth Hack will be launched from a Mini notification)
 		findViewById(R.id.launchbar).setOnClickListener(new OnClickListener() { 
@@ -77,6 +93,15 @@ public class MainActivity extends Activity {
 
 
 	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		//Little Clean up : use this when you are invoking Growth Hack using
+		// "AppviralityUI.showGrowthHack(MainActivity.this, AppviralityUI.GH.Word_of_Mouth);" call
+		AppviralityUI.onStop();
+	}
+
 
 
 }

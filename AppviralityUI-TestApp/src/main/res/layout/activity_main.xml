@@ -40,7 +40,23 @@ android:background="@color/red" >
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:text="Invite Friends"
+            android:text="Invite Friends - 1"
+            android:typeface="serif" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option - 1_2 : Show Custom Button if Campaign Exists/Active"
+            android:typeface="serif"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/btnGH_IfCampaignExists"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Invite Friends - 2"
             android:typeface="serif" />
 
         <TextView

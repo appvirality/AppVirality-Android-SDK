@@ -30,6 +30,7 @@ public class LaunchActivity extends Activity {
 	@Override
 	public void onStop() {
 	    super.onStop();
+		// Little Cleanup
 	    AppviralityAPI.onStop();
 	}
 }
