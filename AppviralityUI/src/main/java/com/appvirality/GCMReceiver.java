@@ -14,6 +14,8 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.os.Build;
 
+import java.lang.reflect.Method;
+
 public class GCMReceiver extends BroadcastReceiver {
 
     @Override
@@ -133,7 +135,7 @@ public class GCMReceiver extends BroadcastReceiver {
             notificationManager.notify(0, notification);
         }
     }
-
+/*
     @SuppressWarnings("deprecation")
     @TargetApi(9)
     private Notification makeNotificationSDKLessThan11(Context context, PendingIntent intent, NotificationData notificationData) {
@@ -141,6 +143,20 @@ public class GCMReceiver extends BroadcastReceiver {
         n.flags |= Notification.FLAG_AUTO_CANCEL;
         n.setLatestEventInfo(context, notificationData.title, notificationData.message, intent);
         return n;
+    }
+*/
+
+    @SuppressWarnings("deprecation")
+    private static Notification makeNotificationSDKLessThan11(Context context, PendingIntent pendingIntent, NotificationData notificationData) {
+        Notification notification = new Notification(notificationData.icon, "", System.currentTimeMillis());
+        try {
+            // try to call "setLatestEventInfo" if available
+            Method m = notification.getClass().getMethod("setLatestEventInfo", Context.class, CharSequence.class, CharSequence.class, PendingIntent.class);
+            m.invoke(notification, context, notificationData.title, notificationData.message, pendingIntent);
+        } catch (Exception e) {
+            // do nothing
+        }
+        return notification;
     }
 
     @SuppressWarnings("deprecation")

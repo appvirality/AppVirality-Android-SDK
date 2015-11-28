@@ -20,6 +20,7 @@ Button btnShowGrowthHack;
         setContentView(R.layout.activity_invite_button_on_campaign_availability);
 
         btnShowGrowthHack = (Button)findViewById(R.id.btnShowGH_IfCampaignExists);
+        btnShowGrowthHack.setVisibility(View.INVISIBLE);
 
         //Load campaign Detail and enable buttons
         AppviralityAPI.setCampaignHandler(InviteButtonOnCampaignAvailability.this, AppviralityAPI.GH.Word_of_Mouth, new AppviralityAPI.CampaignReadyListner() {
