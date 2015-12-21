@@ -16,7 +16,9 @@
     <string name="appvirality_growth_title_text">Referrals</string>
     <string name="appvirality_growth_desc">Your friend had referred you. please login to claim it.</string>
     <string name="appvirality_growth_link_title">Your personal referral Link:</string>
+    <string name="appvirality_growth_code_title">OR</string>
     <string name="appvirality_growth_link">www.r.appvirality.com/df/5</string>
+    <string name="appvirality_growth_code">AVMYCODE</string>
     <string name="appvirality_growth_seemore">Show More</string>
     <string name="appvirality_welcome_title">You\'ve been invited!</string>
     <string name="appvirality_welcome_desc">{{username}} has given you Reward $ 15</string>
@@ -41,5 +43,6 @@
     <string name="appvirality_btnreload">Reload</string>
     <string name="appvirality_user_settings_coupon">My Coupons</string>
      <string name="appvirality_user_settings_nocoupons">Oops, You don’t have any coupons yet!</string>
+    <string name="appvirality_user_enter_referralcode">Referral code, if you have</string>
 
 </resources>

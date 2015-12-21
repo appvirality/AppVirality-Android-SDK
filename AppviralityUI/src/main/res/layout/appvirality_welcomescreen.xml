@@ -70,6 +70,17 @@
                 android:visibility="gone" />
 
             <EditText
+                android:id="@+id/editTextReferralCode"
+                android:layout_width="230dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/appvirality_welcome_edemail"
+                android:hint="@string/appvirality_user_enter_referralcode"
+                android:paddingLeft="10dp"
+                />
+
+            <EditText
                 android:id="@+id/appvirality_edittext_email"
                 android:layout_width="230dp"
                 android:layout_height="50dp"

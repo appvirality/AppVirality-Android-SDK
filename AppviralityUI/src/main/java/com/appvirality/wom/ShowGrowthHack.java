@@ -1,7 +1,5 @@
 package com.appvirality.wom;
 
-import java.util.ArrayList;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
@@ -30,6 +28,8 @@ import com.appvirality.R;
 import com.appvirality.android.AppviralityAPI;
 import com.appvirality.android.CampaignDetails;
 
+import java.util.ArrayList;
+
 public class ShowGrowthHack extends Activity
 {
 	private ExpandableHeightGridView gridView;
@@ -37,6 +37,7 @@ public class ShowGrowthHack extends Activity
 	private String customLinkSaved;
 	ArrayList<com.appvirality.wom.Items> socialActions;
 	private TextView txtShareLink;
+	private TextView txtShareCode;
 	private String shareLink;
 
 	@SuppressWarnings("deprecation")
@@ -57,7 +58,10 @@ public class ShowGrowthHack extends Activity
 				final TextView txtTerms = (TextView) findViewById(R.id.appvirality_txtuserterms);
 				final LinearLayout campaignImage = (LinearLayout) findViewById(R.id.appvirality_campaignimage);
 				final LinearLayout referralShareUrl = (LinearLayout) findViewById(R.id.appvirality_custom_share_link);
+				final LinearLayout referralShareCode = (LinearLayout) findViewById(R.id.appvirality_custom_share_code);
+
 				txtShareLink = (TextView) findViewById(R.id.appvirality_share_link);
+				txtShareCode = (TextView) findViewById(R.id.appvirality_share_code);
 
 				// displaying campaign details
 				txtOfferTitle.setText(Html.fromHtml("<b>" + campaignDetails.OfferTitle + "</b>"));
@@ -100,8 +104,21 @@ public class ShowGrowthHack extends Activity
 					referralShareUrl.setVisibility(View.GONE);
 					findViewById(R.id.appvirality_referral_link_title).setVisibility(View.GONE);
 				}
-				else
-					txtShareLink.setText(campaignDetails.ShareUrl + (!TextUtils.isEmpty(customLinkSaved) ? "/" + customLinkSaved : ""));
+				else {
+					if(!TextUtils.isEmpty(campaignDetails.Shortcode)){
+						txtShareLink.setText(campaignDetails.ShareUrl + (!TextUtils.isEmpty(customLinkSaved) ? "/" + customLinkSaved : ""));
+						txtShareCode.setText("YOUR CODE : " + campaignDetails.Shortcode);
+						txtShareCode.setVisibility(View.VISIBLE);
+						referralShareCode.setVisibility(View.VISIBLE);
+
+					}
+					else{
+						txtShareLink.setText(campaignDetails.ShareUrl + (!TextUtils.isEmpty(customLinkSaved) ? "/" + customLinkSaved : ""));
+						txtShareCode.setVisibility(View.GONE);
+						referralShareCode.setVisibility(View.GONE);
+					}
+
+				}
 
 				gridView.setOnItemClickListener(new OnItemClickListener() {
 					@Override
@@ -176,6 +193,7 @@ public class ShowGrowthHack extends Activity
 					((TextView) findViewById(R.id.appvirality_referral_link_title)).setTextColor(Color.parseColor(campaignDetails.OfferTitleColor));
 					txtShowMore.setTextColor(Color.parseColor(campaignDetails.OfferTitleColor));
 					txtShareLink.setTextColor(offerDescriptionColor);
+					txtShareCode.setTextColor(offerDescriptionColor);
 					GradientDrawable shareLinkColor =  new GradientDrawable();
 					shareLinkColor.setCornerRadius(6);
 					shareLinkColor.setColor(Color.TRANSPARENT);
@@ -186,6 +204,7 @@ public class ShowGrowthHack extends Activity
 						shareLinkColor.setStroke(1, Color.WHITE);
 					if (android.os.Build.VERSION.SDK_INT >= 16) {
 						referralShareUrl.setBackground(shareLinkColor);
+						referralShareCode.setBackground(shareLinkColor);
 						if(campaignDetails.CampaignImage != null)						
 							campaignImage.setBackground(new BitmapDrawable(getResources(), campaignDetails.CampaignImage));
 						if(campaignDetails.CampaignBGImage != null)
@@ -193,6 +212,7 @@ public class ShowGrowthHack extends Activity
 					}
 					else {
 						referralShareUrl.setBackgroundDrawable(shareLinkColor);
+						referralShareCode.setBackgroundDrawable(shareLinkColor);
 						if(campaignDetails.CampaignImage != null)						
 							campaignImage.setBackgroundDrawable(new BitmapDrawable(campaignDetails.CampaignImage));
 						if(campaignDetails.CampaignBGImage != null)

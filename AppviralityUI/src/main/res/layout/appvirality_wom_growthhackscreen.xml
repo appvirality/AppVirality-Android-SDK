@@ -111,8 +111,8 @@
                 android:textStyle="bold" />
 
             <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:background="@drawable/appvirality_copy"
                 android:paddingRight="5dp" />
         </LinearLayout>
@@ -165,6 +165,38 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/appvirality_referral_code_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="1dp"
+            android:text="@string/appvirality_growth_code_title"
+            android:textColor="#ffffff" />
+
+        <LinearLayout
+            android:id="@+id/appvirality_custom_share_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/appvirality_share_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/appvirality_growth_code"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
         <!-- Warning : Do not remove this line - Removing this would cause license implications. 
         This will be removed automatically if you go for whiteLabel solution. -->

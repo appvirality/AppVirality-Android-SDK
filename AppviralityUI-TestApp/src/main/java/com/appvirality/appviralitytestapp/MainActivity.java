@@ -28,7 +28,8 @@ public class MainActivity extends Activity {
 			public void onInstance(AppviralityAPI instance) {
 				String userkey = instance.getUserKey();
 				boolean isReferrer = instance.hasReferrer();
-				Log.i("Userkey: ", userkey + " & HasReferrer: " + isReferrer);
+				String refcode = instance.getFriendReferralCode();
+				Log.i("Userkey: ", userkey + " & HasReferrer: " + isReferrer + " & FriendRefcode: " + refcode);
 			}
 		});
 
@@ -73,6 +74,15 @@ public class MainActivity extends Activity {
 			public void onClick(View v) { 
 				Intent intent = new Intent(MainActivity.this, LaunchActivity.class);
 				intent.putExtra(LAUNCHCODE, false);
+				startActivity(intent);
+			}
+		});
+
+		//Registration page
+		findViewById(R.id.btnRegister).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(MainActivity.this, Registration.class);
 				startActivity(intent);
 			}
 		});

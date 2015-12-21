@@ -21,6 +21,8 @@ import com.appvirality.R;
 import com.appvirality.android.AppviralityAPI;
 
 public class WelcomeScreenActivity extends Activity {
+	EditText editTextrefcode;
+	ProgressDialog progressDialog;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);      
@@ -35,6 +37,11 @@ public class WelcomeScreenActivity extends Activity {
 			ImageView imgProfile = (ImageView) findViewById(R.id.appvirality_user_profile);
 			Button btnSignUp = (Button) findViewById(R.id.appvirality_btnsignup);
 
+			editTextrefcode = (EditText)findViewById(R.id.editTextReferralCode);
+			if(!TextUtils.isEmpty(AppviralityAPI.getFriendReferralCode())) {
+				editTextrefcode.setText(AppviralityAPI.getFriendReferralCode().toUpperCase());
+			}
+
 			txtReferrerDesc.setText(referrerDetails.WelcomeMessage);
 			if(!TextUtils.isEmpty(referrerDetails.OfferTitleColor))
 				txtReferrerDesc.setTextColor(Color.parseColor(referrerDetails.OfferTitleColor));
@@ -44,10 +51,13 @@ public class WelcomeScreenActivity extends Activity {
 			if(!referrerDetails.FriendRewardEvent.equalsIgnoreCase("Install")) {				
 				btnClaim.setVisibility(View.GONE);
 				userEmail.setVisibility(View.GONE);
-				txtSkipReferrer.setText("Close");				
+				editTextrefcode.setVisibility(View.GONE);
+				txtSkipReferrer.setText("Close");
 			}
-			if(referrerDetails.FriendRewardEvent.equalsIgnoreCase("Signup"))
+			if(referrerDetails.FriendRewardEvent.equalsIgnoreCase("Signup")) {
 				btnSignUp.setVisibility(View.VISIBLE);
+				editTextrefcode.setVisibility(View.GONE);
+			}
 			if(referrerDetails.isEmailExists)
 				userEmail.setVisibility(View.GONE);
 			else
@@ -111,36 +121,74 @@ public class WelcomeScreenActivity extends Activity {
 	private void setFriendRewardListner(String email)
 	{
 		try {
-			final ProgressDialog progressDialog = new ProgressDialog(WelcomeScreenActivity.this);
+			final String userEmail = email;
+			progressDialog = new ProgressDialog(WelcomeScreenActivity.this);
 			progressDialog.setMessage("Please wait...");
 			progressDialog.setCancelable(true);
 			progressDialog.show();
 
-			AppviralityAPI.claimRewardOnInstall(getApplicationContext(), email, new AppviralityAPI.RewardClaimed() {				
-				@Override
-				public void OnResponse(boolean isRewarded, String message) {
-					try {
-						if(progressDialog != null && progressDialog.isShowing())
-							progressDialog.dismiss();
-						if(isRewarded)
-						{
-							Toast.makeText(getApplicationContext(), message , Toast.LENGTH_LONG).show();
+			String refcode = editTextrefcode.getText().toString();
+			if(!TextUtils.isEmpty(refcode)) {
+
+				AppviralityAPI.SubmitReferralCode(refcode, new AppviralityAPI.SubmitReferralCodeListner() {
+					@Override
+					public void onResponse(boolean isSuccess) {
+						if (isSuccess) {
+							Log.i("AppViralitySDK : ", "Referral Code applied Successfully");
 						}
 						else
 						{
-							Toast.makeText(getApplicationContext(), "Sorry..! Reward is only first time app users, But you can still earn by referring your friends" , Toast.LENGTH_LONG).show();
+							Toast.makeText(WelcomeScreenActivity.this, "Failed to apply referral code", Toast.LENGTH_SHORT).show();
 						}
-
-						finish();
+						submitInstallConversionEvent(userEmail);
 					}
-					catch(Exception e) {
 
-					}
-				}
-			});
+				});
+			}else
+			{
+				submitInstallConversionEvent(userEmail);
+			}
 		}
 		catch(Exception e) {			
 			finish();
+		}
+	}
+
+	protected void submitInstallConversionEvent(String email)
+	{
+		AppviralityAPI.claimRewardOnInstall(getApplicationContext(), email, new AppviralityAPI.RewardClaimed() {
+			@Override
+			public void OnResponse(boolean isRewarded, String message) {
+				try {
+					if(progressDialog != null && progressDialog.isShowing()) {
+						progressDialog.dismiss();
+						progressDialog = null;
+					}
+					if(isRewarded)
+					{
+						Toast.makeText(getApplicationContext(), message , Toast.LENGTH_LONG).show();
+					}
+					else
+					{
+						Toast.makeText(getApplicationContext(), "Sorry..! Reward is only first time app users, But you can still earn by referring your friends" , Toast.LENGTH_LONG).show();
+					}
+
+					finish();
+				}
+				catch(Exception e) {
+
+				}
+			}
+		});
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		if(progressDialog != null && progressDialog.isShowing())
+		{
+			progressDialog.dismiss();
+			progressDialog = null;
 		}
 	}
 }

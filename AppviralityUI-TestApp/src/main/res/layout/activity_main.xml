@@ -36,7 +36,7 @@ android:background="@color/red" >
 
         <Button
             android:id="@+id/growthhack"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
@@ -52,7 +52,7 @@ android:background="@color/red" >
 
         <Button
             android:id="@+id/btnGH_IfCampaignExists"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
@@ -69,7 +69,7 @@ android:background="@color/red" >
 
         <Button
             android:id="@+id/launchbar"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
@@ -86,11 +86,20 @@ android:background="@color/red" >
 
         <Button
             android:id="@+id/launchpopup"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:text="Show Popup Notification"
+            android:text="Popup Notification"
+            android:typeface="serif" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Register Now"
             android:typeface="serif" />
     </LinearLayout>
 
