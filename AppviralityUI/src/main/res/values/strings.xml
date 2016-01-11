@@ -18,7 +18,7 @@
     <string name="appvirality_growth_link_title">Your personal referral Link:</string>
     <string name="appvirality_growth_code_title">OR</string>
     <string name="appvirality_growth_link">www.r.appvirality.com/df/5</string>
-    <string name="appvirality_growth_code">AVMYCODE</string>
+    <string name="appvirality_growth_code"></string>
     <string name="appvirality_growth_seemore">Show More</string>
     <string name="appvirality_welcome_title">You\'ve been invited!</string>
     <string name="appvirality_welcome_desc">{{username}} has given you Reward $ 15</string>

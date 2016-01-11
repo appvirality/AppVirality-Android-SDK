@@ -22,9 +22,15 @@ public class Registration extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_registration);
 		editTextrefcode = (EditText)findViewById(R.id.editTextReferralCode);
-		if(!TextUtils.isEmpty(AppviralityAPI.getFriendReferralCode())) {
-			editTextrefcode.setText(AppviralityAPI.getFriendReferralCode().toUpperCase());
+		String friendrefCode = AppviralityAPI.getFriendReferralCode();
+		if(!TextUtils.isEmpty(friendrefCode)) {
+			editTextrefcode.setText(friendrefCode.toUpperCase());
 		}
+
+		if((!TextUtils.isEmpty(AppviralityAPI.getAttributionSetting())
+				&& AppviralityAPI.getAttributionSetting().equals("0")) || AppviralityAPI.isAttributionConfirmed())
+			editTextrefcode.setVisibility(View.GONE);
+
 
 		findViewById(R.id.Register).setOnClickListener(new OnClickListener() {
 			@Override
@@ -34,7 +40,9 @@ public class Registration extends Activity {
 				progressDialog.setCancelable(true);
 				progressDialog.show();
 				String refcode = editTextrefcode.getText().toString();
-				if(!TextUtils.isEmpty(refcode)) {
+
+				if(!TextUtils.isEmpty(refcode) && !TextUtils.isEmpty(AppviralityAPI.getAttributionSetting())
+						&& !AppviralityAPI.getAttributionSetting().equals("0") && !AppviralityAPI.isAttributionConfirmed()) {
 
 					AppviralityAPI.SubmitReferralCode(refcode, new AppviralityAPI.SubmitReferralCodeListner() {
 						@Override

@@ -38,8 +38,9 @@ public class WelcomeScreenActivity extends Activity {
 			Button btnSignUp = (Button) findViewById(R.id.appvirality_btnsignup);
 
 			editTextrefcode = (EditText)findViewById(R.id.editTextReferralCode);
-			if(!TextUtils.isEmpty(AppviralityAPI.getFriendReferralCode())) {
-				editTextrefcode.setText(AppviralityAPI.getFriendReferralCode().toUpperCase());
+			String refCode = AppviralityAPI.getFriendReferralCode();
+			if(!TextUtils.isEmpty(refCode)) {
+				editTextrefcode.setText(refCode.toUpperCase());
 			}
 
 			txtReferrerDesc.setText(referrerDetails.WelcomeMessage);
@@ -58,6 +59,11 @@ public class WelcomeScreenActivity extends Activity {
 				btnSignUp.setVisibility(View.VISIBLE);
 				editTextrefcode.setVisibility(View.GONE);
 			}
+			//hide referralcode input filed if attribution setting is only Link
+			if((!TextUtils.isEmpty(AppviralityAPI.getAttributionSetting())
+					&& AppviralityAPI.getAttributionSetting().equals("0")) || AppviralityAPI.isAttributionConfirmed())
+				editTextrefcode.setVisibility(View.GONE);
+
 			if(referrerDetails.isEmailExists)
 				userEmail.setVisibility(View.GONE);
 			else
@@ -128,8 +134,8 @@ public class WelcomeScreenActivity extends Activity {
 			progressDialog.show();
 
 			String refcode = editTextrefcode.getText().toString();
-			if(!TextUtils.isEmpty(refcode)) {
-
+			if(!TextUtils.isEmpty(refcode) && !TextUtils.isEmpty(AppviralityAPI.getAttributionSetting())
+					&& !AppviralityAPI.getAttributionSetting().equals("0") && !AppviralityAPI.isAttributionConfirmed()) {
 				AppviralityAPI.SubmitReferralCode(refcode, new AppviralityAPI.SubmitReferralCodeListner() {
 					@Override
 					public void onResponse(boolean isSuccess) {

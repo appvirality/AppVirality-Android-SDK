@@ -100,11 +100,11 @@ public class ShowGrowthHack extends Activity
 				shareLink = campaignDetails.ShareUrl;
 				if(customLinkSaved == null)
 					customLinkSaved = campaignDetails.UserCustomLink;
-				if(!campaignDetails.showCustomLink) {
-					referralShareUrl.setVisibility(View.GONE);
-					findViewById(R.id.appvirality_referral_link_title).setVisibility(View.GONE);
-				}
-				else {
+//				if(!campaignDetails.showCustomLink) {
+//					referralShareUrl.setVisibility(View.GONE);
+//					findViewById(R.id.appvirality_referral_link_title).setVisibility(View.GONE);
+//				}
+//				else {
 					if(!TextUtils.isEmpty(campaignDetails.Shortcode)){
 						txtShareLink.setText(campaignDetails.ShareUrl + (!TextUtils.isEmpty(customLinkSaved) ? "/" + customLinkSaved : ""));
 						txtShareCode.setText("YOUR CODE : " + campaignDetails.Shortcode);
@@ -118,7 +118,7 @@ public class ShowGrowthHack extends Activity
 						referralShareCode.setVisibility(View.GONE);
 					}
 
-				}
+				//}
 
 				gridView.setOnItemClickListener(new OnItemClickListener() {
 					@Override
