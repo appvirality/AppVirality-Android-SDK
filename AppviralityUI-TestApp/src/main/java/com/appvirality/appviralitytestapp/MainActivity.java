@@ -30,6 +30,10 @@ public class MainActivity extends Activity {
 				boolean isReferrer = instance.hasReferrer();
 				String refcode = instance.getFriendReferralCode();
 				Log.i("Userkey: ", userkey + " & HasReferrer: " + isReferrer + " & FriendRefcode: " + refcode);
+				// The status of isExistingUser will not be changed until user un-install and install the App again
+				boolean isExistingUser = instance.isExistingUser();
+				Log.i("AV isExisting User: ",""+ isExistingUser);
+
 			}
 		});
 
