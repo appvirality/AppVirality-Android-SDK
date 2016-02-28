@@ -6,14 +6,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Toast;
 
 import com.appvirality.AppviralityUI;
+import com.appvirality.CampaignHandler;
 import com.appvirality.android.AppviralityAPI;
 
 public class MainActivity extends Activity {
 
 	private final String LAUNCHCODE = "appvirality.sampleapp.launchmode";
 	private final int REQUEST_CODE = 5000;
+	private final String AV_Key = "792f79c66f0e454d91cca56a0134102f";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,19 +26,18 @@ public class MainActivity extends Activity {
 		AppviralityUI.showWelcomeScreen(MainActivity.this, REQUEST_CODE);
 		// Get GCM Registration key to enable push notifications.
 		//GCMRegistration.registerGCM(getApplicationContext());
-        AppviralityAPI.getInstance(getApplicationContext(), new AppviralityAPI.UserInstance() {
-			@Override
-			public void onInstance(AppviralityAPI instance) {
-				String userkey = instance.getUserKey();
-				boolean isReferrer = instance.hasReferrer();
-				String refcode = instance.getFriendReferralCode();
-				Log.i("Userkey: ", userkey + " & HasReferrer: " + isReferrer + " & FriendRefcode: " + refcode);
-				// The status of isExistingUser will not be changed until user un-install and install the App again
-				boolean isExistingUser = instance.isExistingUser();
-				Log.i("AV isExisting User: ",""+ isExistingUser);
-
-			}
-		});
+//        AppviralityAPI.getInstance(getApplicationContext(), new AppviralityAPI.UserInstance() {
+//			@Override
+//			public void onInstance(AppviralityAPI instance) {
+//				String userkey = instance.getUserKey();
+//				boolean isReferrer = instance.hasReferrer();
+//				String refcode = instance.getFriendReferralCode();
+//				Log.i("Userkey: ", userkey + " & HasReferrer: " + isReferrer + " & FriendRefcode: " + refcode);
+//				// The status of isExistingUser will not be changed until user un-install and install the App again
+//				boolean isExistingUser = instance.isExistingUser();
+//				Log.i("Appvirality isExisting User: ",""+ isExistingUser);
+//			}
+//		});
 
 
 
@@ -88,6 +90,27 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				Intent intent = new Intent(MainActivity.this, Registration.class);
 				startActivity(intent);
+			}
+		});
+
+		//Registration page
+		findViewById(R.id.btnInitSDK).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(MainActivity.this, InitWithSignup.class);
+				startActivity(intent);
+			}
+		});
+
+		//Registration page
+		findViewById(R.id.btnLogout).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				CampaignHandler.setCampaignDetails(null);
+				CampaignHandler.setReferrerDetails(null);
+				AppviralityAPI.LogOut(getApplicationContext());
+				Toast.makeText(MainActivity.this, "Finished logout",
+						Toast.LENGTH_LONG).show();
 			}
 		});
 

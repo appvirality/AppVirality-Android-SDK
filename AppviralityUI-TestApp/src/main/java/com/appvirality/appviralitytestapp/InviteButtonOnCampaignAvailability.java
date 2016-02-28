@@ -28,9 +28,9 @@ Button btnShowGrowthHack;
             public void onCampaignReady(CampaignDetails campaignDetails) {
                 if (campaignDetails != null) {
                     Log.i("AVLOG", "Campaign Details Ready now");
-                    String myReferralCode =campaignDetails.Shortcode;
                     //Set Campaign Details
                     CampaignHandler.setCampaignDetails(campaignDetails);
+                    String myReferralCode =campaignDetails.ReferralCode;
                     // make the Invite button visible as the campaign details are available
                     btnShowGrowthHack.setVisibility(View.VISIBLE);
                 }

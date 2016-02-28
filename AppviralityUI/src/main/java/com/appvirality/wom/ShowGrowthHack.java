@@ -107,7 +107,7 @@ public class ShowGrowthHack extends Activity
 //				else {
 					if(!TextUtils.isEmpty(campaignDetails.Shortcode)){
 						txtShareLink.setText(campaignDetails.ShareUrl + (!TextUtils.isEmpty(customLinkSaved) ? "/" + customLinkSaved : ""));
-						txtShareCode.setText("YOUR CODE : " + campaignDetails.Shortcode);
+						txtShareCode.setText("YOUR CODE : " + campaignDetails.ReferralCode);
 						txtShareCode.setVisibility(View.VISIBLE);
 						referralShareCode.setVisibility(View.VISIBLE);
 

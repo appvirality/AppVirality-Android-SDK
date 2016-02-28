@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/red"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="if your App has Logout or Login to allow multiple users to use single device and want to have same referral code across all platforms.Then initialize the SDK with Referral Code and User accountID"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:textColor="#000000" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextReferralCode"
+        android:hint="Enter Referral Code, if you have"
+        android:layout_gravity="center_horizontal" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextEmailID"
+        android:hint="Enter Your EmailID"
+        android:layout_gravity="center_horizontal" />
+
+    <CheckBox
+        android:id="@+id/chkisExistingUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ExistingUser" />
+
+    <Button
+        android:id="@+id/Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="initialize SDK"
+         android:layout_gravity="center_horizontal"
+        android:typeface="serif" />
+
+</LinearLayout>
