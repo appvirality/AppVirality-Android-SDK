@@ -16,12 +16,12 @@ public class MainActivity extends Activity {
 
 	private final String LAUNCHCODE = "appvirality.sampleapp.launchmode";
 	private final int REQUEST_CODE = 5000;
-	private final String AV_Key = "792f79c66f0e454d91cca56a0134102f";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
 		//Show personalized welcome screen for new users
 		AppviralityUI.showWelcomeScreen(MainActivity.this, REQUEST_CODE);
 		// Get GCM Registration key to enable push notifications.

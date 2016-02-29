@@ -14,7 +14,7 @@ public class SplashActivity extends Activity {
 		setContentView(R.layout.splash);
 
 		// your campaigns will be ready in the background by the time your app gets loads, without effecting the user experience
-		//AppviralityAPI.init(getApplicationContext());
+		AppviralityAPI.init(getApplicationContext());
 
 		final Intent myIntent = new Intent(this, MainActivity.class);
 		

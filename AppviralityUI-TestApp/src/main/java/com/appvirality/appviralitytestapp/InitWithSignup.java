@@ -22,7 +22,7 @@ public class InitWithSignup extends Activity {
 	ProgressDialog progressDialog;
 	EditText editTextrefcode,editTextEmailID;
 	CheckBox chkExistingUser;
-	private final String AV_Key = "71f683f4dab74cd3af5aa44f01768219";
+	//private final String AV_Key = "004d37de619e41888eb7a4f800715468";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -56,21 +56,21 @@ public class InitWithSignup extends Activity {
 				} catch (JSONException e) {
 					e.printStackTrace();
 				}
-				AppviralityAPI.initWithAppKey(getApplicationContext(),AV_Key,userDetails, new AppviralityAPI.InitListner() {
-					@Override
-					public void onInit(boolean isSuccess, JSONObject userDetails) {
-						if(progressDialog != null && progressDialog.isShowing())
-						{
-							progressDialog.dismiss();
-							progressDialog = null;
-						}
-						Toast.makeText(InitWithSignup.this, "Init Status: "+ isSuccess,
-								Toast.LENGTH_LONG).show();
-						Log.i("AppVirality: ", "InitwithAppKey Status " + isSuccess);
-						if(userDetails != null)
-						Log.i("AppVirality: ", "userDetails " + userDetails.toString());
-					}
-				});
+//				AppviralityAPI.initWithAppKey(getApplicationContext(),AV_Key,userDetails, new AppviralityAPI.InitListner() {
+//					@Override
+//					public void onInit(boolean isSuccess, JSONObject userDetails) {
+//						if(progressDialog != null && progressDialog.isShowing())
+//						{
+//							progressDialog.dismiss();
+//							progressDialog = null;
+//						}
+//						Toast.makeText(InitWithSignup.this, "Init Status: "+ isSuccess,
+//								Toast.LENGTH_LONG).show();
+//						Log.i("AppVirality: ", "InitwithAppKey Status " + isSuccess);
+//						if(userDetails != null)
+//						Log.i("AppVirality: ", "userDetails " + userDetails.toString());
+//					}
+//				});
 			}
 		});
 
