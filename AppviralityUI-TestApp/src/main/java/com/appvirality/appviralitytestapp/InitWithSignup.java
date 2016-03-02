@@ -42,20 +42,20 @@ public class InitWithSignup extends Activity {
 		findViewById(R.id.Register).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				progressDialog = new ProgressDialog(InitWithSignup.this);
-				progressDialog.setMessage("Please wait...");
-				progressDialog.setCancelable(true);
-				progressDialog.show();
-				String refcode = editTextrefcode.getText().toString();
-
-				JSONObject userDetails = new JSONObject();
-				try {
-					userDetails.put("emailid", editTextEmailID.getText().toString());
-					userDetails.put("referrercode", editTextrefcode.getText().toString());
-					userDetails.put("isexistinguser", chkExistingUser.isChecked());
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
+//				progressDialog = new ProgressDialog(InitWithSignup.this);
+//				progressDialog.setMessage("Please wait...");
+//				progressDialog.setCancelable(true);
+//				progressDialog.show();
+//				String refcode = editTextrefcode.getText().toString();
+//
+//				JSONObject userDetails = new JSONObject();
+//				try {
+//					userDetails.put("emailid", editTextEmailID.getText().toString());
+//					userDetails.put("referrercode", editTextrefcode.getText().toString());
+//					userDetails.put("isexistinguser", chkExistingUser.isChecked());
+//				} catch (JSONException e) {
+//					e.printStackTrace();
+//				}
 //				AppviralityAPI.initWithAppKey(getApplicationContext(),AV_Key,userDetails, new AppviralityAPI.InitListner() {
 //					@Override
 //					public void onInit(boolean isSuccess, JSONObject userDetails) {

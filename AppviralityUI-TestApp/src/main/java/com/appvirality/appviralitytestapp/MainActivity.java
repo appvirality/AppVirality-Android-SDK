@@ -26,20 +26,6 @@ public class MainActivity extends Activity {
 		AppviralityUI.showWelcomeScreen(MainActivity.this, REQUEST_CODE);
 		// Get GCM Registration key to enable push notifications.
 		//GCMRegistration.registerGCM(getApplicationContext());
-//        AppviralityAPI.getInstance(getApplicationContext(), new AppviralityAPI.UserInstance() {
-//			@Override
-//			public void onInstance(AppviralityAPI instance) {
-//				String userkey = instance.getUserKey();
-//				boolean isReferrer = instance.hasReferrer();
-//				String refcode = instance.getFriendReferralCode();
-//				Log.i("Userkey: ", userkey + " & HasReferrer: " + isReferrer + " & FriendRefcode: " + refcode);
-//				// The status of isExistingUser will not be changed until user un-install and install the App again
-//				boolean isExistingUser = instance.isExistingUser();
-//				Log.i("Appvirality isExisting User: ",""+ isExistingUser);
-//			}
-//		});
-
-
 
 		//Get emailid used to distribute the rewards
 		Log.i("User EmailID: ", AppviralityAPI.getEmailIdFromAccounts(getApplicationContext()));
