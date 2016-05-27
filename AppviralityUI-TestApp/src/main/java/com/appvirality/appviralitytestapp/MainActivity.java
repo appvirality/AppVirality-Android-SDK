@@ -27,8 +27,6 @@ public class MainActivity extends Activity {
 		// Get GCM Registration key to enable push notifications.
 		//GCMRegistration.registerGCM(getApplicationContext());
 
-		//Get emailid used to distribute the rewards
-		Log.i("User EmailID: ", AppviralityAPI.getEmailIdFromAccounts(getApplicationContext()));
 		//Option:1 - Launch from custom button i.e from "Invite Friends" or "Refer & Earn" button on your App menu
 		findViewById(R.id.growthhack).setOnClickListener(new OnClickListener() {
 			@Override
