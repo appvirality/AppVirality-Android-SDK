@@ -117,6 +117,25 @@ android:background="@color/red" >
             android:layout_marginTop="20dp"
             android:text="Logout"
             android:typeface="serif" />
+
+        <Button
+            android:id="@+id/btnUpdateUserDetails"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Update User Details"
+            android:typeface="serif" />
+
+        <Button
+            android:id="@+id/btn_make_transaction"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Transaction"
+            android:typeface="serif" />
+
     </LinearLayout>
 
 </LinearLayout>

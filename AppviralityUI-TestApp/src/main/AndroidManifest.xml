@@ -59,6 +59,11 @@
         </activity>
         <activity
             android:screenOrientation="portrait"
+            android:name=".UpdateUserDetails"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:screenOrientation="portrait"
             android:name=".InitWithSignup"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>

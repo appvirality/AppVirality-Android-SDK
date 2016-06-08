@@ -7,10 +7,10 @@
     android:padding="10dp" >
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="if your App has SignIn/SignOut to allow multiple users to use single device and want to have same referral code across all platforms(iOS,Android,Web).Then initialize the SDK with User Email account"
+        android:text="Update User Details"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="40dp"
         android:layout_marginBottom="40dp"
@@ -19,14 +19,22 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextReferralCode"
-        android:hint="Enter Referral Code, if you have"
+        android:id="@+id/editTextEmailID"
+        android:hint="Enter Email"
         android:layout_gravity="center_horizontal" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextEmailID"
-        android:hint="Enter Your EmailID"
+        android:id="@+id/editTextName"
+        android:hint="Enter Name"
+        android:layout_gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextStoreID"
+        android:hint="Store ID"
         android:layout_gravity="center_horizontal" />
 
     <CheckBox
@@ -36,11 +44,11 @@
         android:text="ExistingUser" />
 
     <Button
-        android:id="@+id/Register"
+        android:id="@+id/btnUpdateUserDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="initialize SDK"
+        android:text="Update Now"
          android:layout_gravity="center_horizontal"
         android:typeface="serif" />
 

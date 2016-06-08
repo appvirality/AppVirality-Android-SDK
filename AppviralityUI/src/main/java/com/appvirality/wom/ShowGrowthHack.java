@@ -105,18 +105,20 @@ public class ShowGrowthHack extends Activity
 //					findViewById(R.id.appvirality_referral_link_title).setVisibility(View.GONE);
 //				}
 //				else {
-					if(!TextUtils.isEmpty(campaignDetails.Shortcode)){
-						txtShareLink.setText(campaignDetails.ShareUrl + (!TextUtils.isEmpty(customLinkSaved) ? "/" + customLinkSaved : ""));
-						txtShareCode.setText("YOUR CODE : " + campaignDetails.ReferralCode);
-						txtShareCode.setVisibility(View.VISIBLE);
-						referralShareCode.setVisibility(View.VISIBLE);
+                if (!TextUtils.isEmpty(campaignDetails.ReferralCode) && !TextUtils.isEmpty(AppviralityAPI.getAttributionSetting())
+                        && !AppviralityAPI.getAttributionSetting().equals("0")) {
+                    txtShareLink.setText(campaignDetails.ShareUrl + (!TextUtils.isEmpty(customLinkSaved) ? "/" + customLinkSaved : ""));
+                    txtShareCode.setText("YOUR CODE : " + campaignDetails.ReferralCode);
+                    txtShareCode.setVisibility(View.VISIBLE);
+                    referralShareCode.setVisibility(View.VISIBLE);
+                    findViewById(R.id.appvirality_referral_code_title).setVisibility(View.VISIBLE);
 
-					}
-					else{
-						txtShareLink.setText(campaignDetails.ShareUrl + (!TextUtils.isEmpty(customLinkSaved) ? "/" + customLinkSaved : ""));
-						txtShareCode.setVisibility(View.GONE);
-						referralShareCode.setVisibility(View.GONE);
-					}
+                } else {
+                    txtShareLink.setText(campaignDetails.ShareUrl + (!TextUtils.isEmpty(customLinkSaved) ? "/" + customLinkSaved : ""));
+                    txtShareCode.setVisibility(View.GONE);
+                    referralShareCode.setVisibility(View.GONE);
+                    findViewById(R.id.appvirality_referral_code_title).setVisibility(View.GONE);
+                }
 
 				//}
 

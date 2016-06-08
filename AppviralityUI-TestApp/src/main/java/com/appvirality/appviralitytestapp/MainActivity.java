@@ -1,11 +1,13 @@
 package com.appvirality.appviralitytestapp;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.appvirality.AppviralityUI;
@@ -28,7 +30,7 @@ public class MainActivity extends Activity {
 		//GCMRegistration.registerGCM(getApplicationContext());
 
 		//Get emailid used to distribute the rewards
-		Log.i("User EmailID: ", AppviralityAPI.getEmailIdFromAccounts(getApplicationContext()));
+		//Log.i("User EmailID: ", AppviralityAPI.getEmailIdFromAccounts(getApplicationContext()));
 		//Option:1 - Launch from custom button i.e from "Invite Friends" or "Refer & Earn" button on your App menu
 		findViewById(R.id.growthhack).setOnClickListener(new OnClickListener() {
 			@Override
@@ -100,12 +102,44 @@ public class MainActivity extends Activity {
 			}
 		});
 
-	}
+		//Update user Info
+		findViewById(R.id.btnUpdateUserDetails).setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(MainActivity.this, UpdateUserDetails.class);
+				startActivity(intent);
+			}
+		});
 
-	@Override
-	public void onActivityResult(int requestCode, int resultCode, Intent data)
-	{
-		super.onActivityResult(requestCode, resultCode, data);
+        findViewById(R.id.btn_make_transaction).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog popUp = new Dialog(MainActivity.this);
+                popUp.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                popUp.setCancelable(true);
+                popUp.setContentView(R.layout.dialog_transaction);
+                final EditText editText = (EditText) popUp.findViewById(R.id.edit_transaction_amount);
+                popUp.findViewById(R.id.btn_make_transaction).setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String transactionAmount = editText.getText().toString().trim();
+                        if (transactionAmount.equals("")) {
+                            editText.setError("Required");
+                        } else {
+                            AppviralityAPI.saveConversionEvent("Transaction", transactionAmount, null);
+                            popUp.dismiss();
+                        }
+                    }
+                });
+                popUp.show();
+            }
+        });
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
 		if ((requestCode == REQUEST_CODE) && (resultCode == -1))
 		{
