@@ -1,2 +1,2 @@
-include ':AppviralityUI-TestApp', ':AppviralitySDK'
+include ':AppviralityUI-TestApp'
 include ':AppviralityUI'
