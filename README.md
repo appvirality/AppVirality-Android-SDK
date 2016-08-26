@@ -15,7 +15,7 @@ Current Version : 1.1.25
 
 [Version Info](https://github.com/appvirality/appvirality-sdk-android/wiki/Android-SDK-Version-History)
 
-Integrating Appvirality into your App
+Integrating Appvirality into your App 
 -------------------------------------
 
 <H4>Personalized-Referrals GrowthHack</H4>
