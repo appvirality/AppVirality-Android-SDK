@@ -49,6 +49,8 @@ public class Registration extends Activity {
 						public void onResponse(boolean isSuccess) {
 							if (isSuccess) {
 								Log.i("AppViralitySDK : ", "Referral Code applied Successfully");
+								Toast.makeText(Registration.this, "Referral Code applied Successfully", Toast.LENGTH_SHORT).show();
+
 							}
 							else
 							{

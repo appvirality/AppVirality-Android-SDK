@@ -64,7 +64,7 @@ public class GCMReceiver extends BroadcastReceiver {
         }
 
         int notificationIcon = -1;
-		if (null != appInfo) {
+        if (null != appInfo) {
             notificationIcon = appInfo.icon;
         }
 
