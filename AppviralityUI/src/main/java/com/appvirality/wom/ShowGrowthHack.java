@@ -221,7 +221,7 @@ public class ShowGrowthHack extends Activity {
                 AppviralityAPI.getUserEarnings(campaignDetails, new AppviralityAPI.UserEarningsListner() {
                     @Override
                     public void showUserEarnings(String earningTotal) {
-                        if (!ShowGrowthHack.this.isFinishing()) {
+                        if (!isFinishing()) {
                             if (campaignDetails.isRewardExists ? true : !earningTotal.equals("0")) {
                                 txtReferrals.setText("Earnings :");
                                 txtTotalEarnings.setText(earningTotal);
