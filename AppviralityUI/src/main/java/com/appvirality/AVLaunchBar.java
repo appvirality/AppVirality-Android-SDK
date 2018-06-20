@@ -22,8 +22,8 @@ import com.appvirality.android.CampaignDetails;
 
 public class AVLaunchBar {
     private Activity activity;
-    private static PopupWindow launchBarPopup;
-    private static Dialog LaunchBarDialog;
+    private PopupWindow launchBarPopup;
+    private Dialog LaunchBarDialog;
 
     public AVLaunchBar(Activity activity) {
         this.activity = activity;

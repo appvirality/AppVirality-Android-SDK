@@ -136,6 +136,15 @@ android:background="@color/red" >
             android:text="Transaction"
             android:typeface="serif" />
 
+        <Button
+            android:id="@+id/btn_check_attribution"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Check Attribution"
+            android:typeface="serif" />
+
     </LinearLayout>
 
 </LinearLayout>

@@ -1,12 +1,12 @@
 package com.appvirality.appviralitytestapp;
 
-import org.json.JSONObject;
-
 import android.app.Application;
 import android.util.Log;
 
 import com.appvirality.android.AppviralityAPI;
 import com.appvirality.android.ConversionEventListner;
+
+import org.json.JSONObject;
 
 public class MyApplication extends Application {
 
@@ -17,7 +17,6 @@ public class MyApplication extends Application {
 		super.onCreate();
 
 		singleton = this;
-		
 		//Check for FriendReward, Listner will get called if there is any Friend Reward.
 		AppviralityAPI.checkFriendReward(getApplicationContext(), new AppviralityAPI.FriendRewardListner() {			
 			@Override

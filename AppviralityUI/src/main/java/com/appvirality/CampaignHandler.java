@@ -149,13 +149,17 @@ public class CampaignHandler {
     }
 
     protected static void showWelcomeScreen(final Activity activity) {
-        AppviralityAPI.setReferrerDetailsHandler(new AppviralityAPI.ReferrerDetailsListner() {
+        AppviralityAPI.CheckAttribution(activity, null, new AppviralityAPI.CheckAttributionListener() {
             @Override
-            public void onReferrerDetailsReady(ReferrerDetails referrerDetails) {
+            public void onResponse(ReferrerDetails referrerDetails) {
                 try {
                     setReferrerDetails(referrerDetails);
-                    Intent intent = new Intent(activity, WelcomeScreenActivity.class);
-                    activity.startActivity(intent);
+                    if (activity != null && referrerDetails != null && !referrerDetails.isExistingUser && referrerDetails.hasReferrer && !AppviralityAPI.isWelcomeScreenShown(activity)) {
+                        Intent intent = new Intent(activity, WelcomeScreenActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        activity.startActivity(intent);
+                        AppviralityAPI.setWelcomeScreenShown(activity);
+                    }
                 } catch (ActivityNotFoundException e) {
                     Log.e("AppviralitySDK", "please add WelcomeScreenActivity in your manifest");
                 } catch (Exception e) {
@@ -163,17 +167,38 @@ public class CampaignHandler {
                 }
             }
         });
+//        AppviralityAPI.setReferrerDetailsHandler(new AppviralityAPI.ReferrerDetailsListner() {
+//            @Override
+//            public void onReferrerDetailsReady(ReferrerDetails referrerDetails) {
+//                try {
+//                    setReferrerDetails(referrerDetails);
+//                    if (activity != null && !AppviralityAPI.isExistingUser()) {
+//                        Intent intent = new Intent(activity, WelcomeScreenActivity.class);
+//                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                        activity.startActivity(intent);
+//                        AppviralityAPI.setExistingUser(activity.getApplicationContext());
+//                    }
+//                } catch (ActivityNotFoundException e) {
+//                    Log.e("AppviralitySDK", "please add WelcomeScreenActivity in your manifest");
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
     }
 
     protected static void showWelcomeScreen(final Activity activity, final int requestCode) {
-        AppviralityAPI.setReferrerDetailsHandler(new AppviralityAPI.ReferrerDetailsListner() {
+        AppviralityAPI.CheckAttribution(activity, null, new AppviralityAPI.CheckAttributionListener() {
             @Override
-            public void onReferrerDetailsReady(ReferrerDetails referrerDetails) {
+            public void onResponse(ReferrerDetails referrerDetails) {
                 try {
                     setReferrerDetails(referrerDetails);
-                    Intent intent = new Intent(activity, WelcomeScreenActivity.class);
-                    activity.startActivityForResult(intent, requestCode);
-
+                    if (activity != null && referrerDetails != null && !referrerDetails.isExistingUser && referrerDetails.hasReferrer && !AppviralityAPI.isWelcomeScreenShown(activity)) {
+                        Intent intent = new Intent(activity, WelcomeScreenActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        activity.startActivityForResult(intent, requestCode);
+                        AppviralityAPI.setWelcomeScreenShown(activity);
+                    }
                 } catch (ActivityNotFoundException e) {
                     Log.e("AppviralitySDK", "please add WelcomeScreenActivity in your manifest");
                 } catch (Exception e) {
@@ -181,6 +206,24 @@ public class CampaignHandler {
                 }
             }
         });
+//        AppviralityAPI.setReferrerDetailsHandler(new AppviralityAPI.ReferrerDetailsListner() {
+//            @Override
+//            public void onReferrerDetailsReady(ReferrerDetails referrerDetails) {
+//                try {
+//                    setReferrerDetails(referrerDetails);
+//                    if (activity != null && !AppviralityAPI.isExistingUser()) {
+//                        Intent intent = new Intent(activity, WelcomeScreenActivity.class);
+//                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                        activity.startActivityForResult(intent, requestCode);
+//                        AppviralityAPI.setExistingUser(activity.getApplicationContext());
+//                    }
+//                } catch (ActivityNotFoundException e) {
+//                    Log.e("AppviralitySDK", "please add WelcomeScreenActivity in your manifest");
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
     }
 
 }

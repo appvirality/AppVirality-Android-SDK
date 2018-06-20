@@ -1,47 +1,68 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/red"
-    android:orientation="vertical"
-    android:padding="10dp" >
+    android:background="@color/red">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="if your App has SignIn/SignOut to allow multiple users to use single device and want to have same referral code across all platforms(iOS,Android,Web).Then initialize the SDK with User Email account"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"
-        android:textColor="#000000" />
-
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextReferralCode"
-        android:hint="Enter Referral Code, if you have"
-        android:layout_gravity="center_horizontal" />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextEmailID"
-        android:hint="Enter Your EmailID"
-        android:layout_gravity="center_horizontal" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-    <CheckBox
-        android:id="@+id/chkisExistingUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ExistingUser" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="40dp"
+            android:text="if your App has SignIn/SignOut to allow multiple users to use single device and want to have same referral code across all platforms(iOS,Android,Web).Then initialize the SDK with User Email account"
+            android:textColor="#000000" />
 
-    <Button
-        android:id="@+id/Register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="initialize SDK"
-         android:layout_gravity="center_horizontal"
-        android:typeface="serif" />
+        <EditText
+            android:id="@+id/editTextReferralCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:hint="Enter Referral Code, if you have" />
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/editTextEmailID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:hint="Enter Your EmailID" />
+
+        <EditText
+            android:id="@+id/editTextCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:hint="Enter Your Country" />
+
+        <EditText
+            android:id="@+id/editTextStoreID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:hint="Enter Your StoreID" />
+
+
+        <CheckBox
+            android:id="@+id/chkisExistingUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ExistingUser" />
+
+        <Button
+            android:id="@+id/Register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:text="initialize SDK"
+            android:typeface="serif" />
+
+    </LinearLayout>
+
+</ScrollView>
