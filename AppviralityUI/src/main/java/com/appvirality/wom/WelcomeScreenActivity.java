@@ -165,7 +165,7 @@ public class WelcomeScreenActivity extends Activity {
                     if (isRewarded) {
                         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
                     } else {
-                        Toast.makeText(getApplicationContext(), "Sorry..! Reward is only first time app users, But you can still earn by referring your friends", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), !TextUtils.isEmpty(message) ? message : "Sorry..! Reward is only first time app users, But you can still earn by referring your friends", Toast.LENGTH_LONG).show();
                     }
 
                     finish();
